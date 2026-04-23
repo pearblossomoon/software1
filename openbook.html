@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소프1 오픈북 치트시트</title>
+    <meta name="description" content="소프트웨어프로젝트1 오픈북 시험 대비용 치트시트 및 문제 풀이">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="background-glow pos-2"></div>
+    
+    <header class="glass-nav">
+        <div class="nav-content">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 키워드를 검색하세요... (Enter 입력 시 바로 열림)" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">🖥️ 소프1 오픈북 치트시트</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">키워드 탭 → 내용 바로 확인</p>
+        </div>
+        
+        <div class="grid-container" id="cardsContainer">
+            <!-- Cards will be populated by script.js -->
+        </div>
+
+        <!-- 모달 (상세 정보 팝업) -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modalTitle">제목</h2>
+                <div id="modalBody" class="modal-body">내용이 들어갑니다.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 소프트웨어프로젝트1 오픈북 대비 웹페이지. 응원합니다! 📝</p>
+    </footer>
+
+    <script src="detail_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

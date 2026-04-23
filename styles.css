@@ -1,0 +1,311 @@
+:root {
+    --bg-dark: #09090b;
+    --bg-card: #141415;
+    --text-primary: #ededed;
+    --text-secondary: #a1a1aa;
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: fixed;
+    top: -20vh;
+    left: -10vw;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.background-glow.pos-2 {
+    top: 50vh;
+    left: 60vw;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 60%);
+}
+
+.glass-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(9, 9, 11, 0.7);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    text-align: center;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card completely redesigned to match the image */
+.card {
+    background: var(--bg-card);
+    border: 1px solid #27272a;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #52525b;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #e4e4e7;
+    margin: 0;
+}
+
+/* TF Box Layout in Modal */
+.quiz-item {
+    background: #18181b;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.quiz-question {
+    padding: 1.5rem;
+    flex: 1;
+    font-weight: 600;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.q-text {
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.quiz-type {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 800;
+    width: fit-content;
+}
+
+.quiz-type.tf {
+    background: rgba(168, 85, 247, 0.2);
+    color: #d8b4fe;
+}
+
+.quiz-type.short {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+}
+
+.quiz-answer {
+    padding: 1.5rem;
+    flex: 1.2;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.answer-text {
+    font-weight: 700;
+    color: #fca5a5;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.answer-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 5% auto; 
+    padding: 2.5rem;
+    border: 1px solid #333;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-btn {
+    color: var(--text-secondary);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.modal-body {
+    margin-top: 1.5rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    padding-right: 1rem;
+}
+
+.modal-body h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body h4 {
+    font-size: 1.1rem;
+    color: #93c5fd;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body hr {
+    border: none;
+    border-bottom: 1px solid #333;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.modal-body ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-body li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+.modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
