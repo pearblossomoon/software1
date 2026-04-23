@@ -1,108 +1,29 @@
-const lectures = [
-    { id: "1-2", emoji: "💻", title: "하드웨어 & 데이터 표현", color: "#3b82f6" },
-    { id: "2-1", emoji: "⚙️", title: "소프트웨어 & 운영체제", color: "#ef4444" },
-    { id: "2-2", emoji: "🌐", title: "네트워크 & 인터넷", color: "#f59e0b" },
-    { id: "3-1", emoji: "🧠", title: "계산적 사고 & 알고리즘", color: "#eab308" },
-    { id: "3-2", emoji: "📝", title: "프로그래밍 언어", color: "#8b5cf6" },
-    { id: "4-1", emoji: "☁️", title: "클라우드 & 가상화", color: "#22c55e" },
-    { id: "4-2", emoji: "🐧", title: "리눅스 OS 기초", color: "#0ea5e9" },
-    { id: "5-1", emoji: "⌨️", title: "쉘(Shell) 명령어", color: "#6366f1" },
-    { id: "5-2", emoji: "📂", title: "파일 & 디렉토리", color: "#d946ef" },
-    { id: "6-1", emoji: "👤", title: "프로세스 & 입출력", color: "#ec4899" },
-    { id: "tf", emoji: "✅", title: "T/F & 단답 키워드", color: "#22c55e" }
-];
-
-const quizzes = [
-    {
-        type: "tf",
-        label: "T/F",
-        question: "디지털 통신은 연속적인 값을 이용하며 정보의 손실이 발생하기 쉽다.",
-        answer: "False",
-        desc: "아날로그 통신에 대한 설명입니다. 디지털 통신은 0과 1로 부호화되어 정보의 손실이 적고 강건성이 높습니다."
-    },
-    {
-        type: "short",
-        label: "주관식",
-        question: "대상 시스템의 동작을 그대로 모사하여 흉내 내는 기술을 무엇이라 하는가?",
-        answer: "에뮬레이션 (Emulation)",
-        desc: "시스템 동작의 결과를 산출하는 시뮬레이션과 달리, 대상 자체의 동작을 그대로 모사하는 것은 에뮬레이션입니다."
-    },
-    {
-        type: "tf",
-        label: "T/F",
-        question: "리눅스에서는 디렉토리를 포함한 거의 모든 입출력을 파일로 간주한다.",
-        answer: "True",
-        desc: "리눅스는 '모든 것은 파일이다'라는 철학을 가지고 있어 하드웨어 디바이스나 디렉토리도 파일처럼 취급합니다."
-    },
-    {
-        type: "tf",
-        label: "T/F",
-        question: "쉘(Shell)은 커널의 핵심 기능으로서 하드웨어를 직접 제어한다.",
-        answer: "False",
-        desc: "쉘은 사용자의 명령을 해석하여 커널에 전달하는 '껍데기(인터페이스)' 역할을 합니다. 하드웨어를 제어하는 것은 커널(Kernel)입니다."
-    },
-    {
-        type: "short",
-        label: "주관식",
-        question: "컴퓨터가 효과적으로 수행할 수 있도록 문제를 정의하고 답을 기술하는 사고 과정을 무엇이라 하는가?",
-        answer: "계산적 사고 (Computational Thinking)",
-        desc: "데이터 모델링, 자료 추상화, 알고리즘을 이용한 문제 해결 과정 전반을 뜻합니다."
-    },
-    {
-        type: "tf",
-        label: "T/F",
-        question: "운영체제(OS)는 오직 응용 프로그램만 관리할 뿐 사용자 인터페이스는 제공하지 않는다.",
-        answer: "False",
-        desc: "운영체제는 응용 프로그램에게 실행 환경을 제공하며, 사용자에게도 시스템 자원을 이용할 수 있는 인터페이스(쉘, GUI 등)를 제공합니다."
-    },
-    {
-        type: "short",
-        label: "주관식",
-        question: "리눅스에서 시스템에 등록된 사용자들의 계정 정보가 담겨있는 파일의 경로는?",
-        answer: "/etc/passwd",
-        desc: "해당 파일에는 사용자의 이름, UID, GID, 홈 디렉토리, 기본 쉘 등의 정보가 기록되어 있습니다."
-    }
-];
-
-function getQuizHtml() {
-    let html = '<h3>T/F & 단답형 핵심 문제</h3><hr><div style="margin-top: 2rem;">';
-    quizzes.forEach(quiz => {
-        html += `
-            <div class="quiz-item">
-                <div class="quiz-question">
-                    <span class="quiz-type ${quiz.type}">${quiz.label}</span>
-                    <span class="q-text">${quiz.question}</span>
-                </div>
-                <div class="quiz-answer">
-                    <span class="answer-text">정답: ${quiz.answer}</span>
-                    <span class="answer-desc">${quiz.desc}</span>
-                </div>
-            </div>
-        `;
-    });
-    html += '</div>';
-    return html;
-}
+// script.js
+let isSearchMode = false;
 
 function renderCards(filterText = '') {
+    const mainContainer = document.getElementById('view-main');
     const container = document.getElementById('cardsContainer');
-    container.innerHTML = '';
-
     const lowerFilter = filterText.toLowerCase();
 
-    lectures.forEach(lec => {
+    // Only render cards when viewing the main home.
+    container.innerHTML = '';
+
+    treeData.forEach(lec => {
         let match = false;
+        
+        let aggregateData = lec.title.toLowerCase();
+        lec.subs.forEach(s => {
+            aggregateData += s.subTitle.toLowerCase() + s.content.toLowerCase();
+        });
         
         if (lec.id === 'tf') {
             const quizStr = quizzes.map(q => q.question + q.answer + q.desc).join(' ').toLowerCase();
-            if (lec.title.toLowerCase().includes(lowerFilter) || quizStr.includes(lowerFilter)) {
-                match = true;
-            }
-        } else {
-            const dataStr = (typeof detailsData !== 'undefined' && detailsData[lec.id]) ? detailsData[lec.id].toLowerCase() : '';
-            if (lec.title.toLowerCase().includes(lowerFilter) || dataStr.includes(lowerFilter)) {
-                match = true;
-            }
+            aggregateData += quizStr;
+        }
+
+        if (aggregateData.includes(lowerFilter)) {
+            match = true;
         }
         
         if (match) {
@@ -111,27 +32,11 @@ function renderCards(filterText = '') {
             card.style.borderTop = `4px solid ${lec.color}`;
             
             card.innerHTML = `
-                <div class="card-icon">${lec.emoji}</div>
                 <h4>${lec.title}</h4>
             `;
             
             card.addEventListener('click', () => {
-                const modal = document.getElementById('detailModal');
-                const title = document.getElementById('modalTitle');
-                const body = document.getElementById('modalBody');
-                
-                title.innerText = lec.title;
-                
-                if (lec.id === 'tf') {
-                    body.innerHTML = getQuizHtml();
-                } else {
-                    const detailText = (typeof detailsData !== 'undefined' && detailsData[lec.id]) 
-                        ? detailsData[lec.id] 
-                        : '상세 정보가 아직 준비되지 않았습니다.';
-                    body.innerHTML = detailText;
-                }
-                
-                modal.style.display = 'block';
+                openSubListView(lec, lowerFilter);
             });
             
             container.appendChild(card);
@@ -139,55 +44,110 @@ function renderCards(filterText = '') {
     });
 }
 
-document.getElementById('searchInput').addEventListener('input', (e) => {
-    renderCards(e.target.value);
-});
+function openSubListView(lecData, filterText = '') {
+    // Hide main, show sub
+    document.getElementById('view-main').classList.remove('active');
+    document.getElementById('view-detail').classList.remove('active');
+    document.getElementById('view-sub').classList.add('active');
+    
+    document.getElementById('subTitle').innerText = `${lecData.title}`;
+    
+    const container = document.getElementById('subListContainer');
+    container.innerHTML = '';
 
-// 검색 후 Enter 키보드 입력 시 제일 상단 검색 결과 오픈
-document.getElementById('searchInput').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const text = e.target.value.toLowerCase().trim();
-        if(!text) return;
+    lecData.subs.forEach(sub => {
+        // If searching, we optionally highlight or filter sub items.
+        // For sublists, we show all belonging to this matched category.
+        const dItem = document.createElement('div');
+        dItem.className = 'sub-item';
+        dItem.innerHTML = `<span style="border-left: 4px solid ${lecData.color}; border-radius: 4px; display: inline-block; height: 18px; margin-right: 12px;"></span> ${sub.subTitle}`;
         
-        const match = lectures.find(lec => {
-            if (lec.id === 'tf') {
-                const quizStr = quizzes.map(q => q.question + q.answer + q.desc).join(' ').toLowerCase();
-                return lec.title.toLowerCase().includes(text) || quizStr.includes(text);
-            } else {
-                const dataStr = detailsData[lec.id] ? detailsData[lec.id].toLowerCase() : '';
-                return dataStr.includes(text) || lec.title.toLowerCase().includes(text);
-            }
+        dItem.addEventListener('click', () => {
+            openDetailReadingView(lecData, sub, filterText);
         });
         
-        if (match) {
-            const modal = document.getElementById('detailModal');
-            const title = document.getElementById('modalTitle');
-            const body = document.getElementById('modalBody');
-            
-            title.innerText = match.title;
-            
-            if (match.id === 'tf') {
-                body.innerHTML = getQuizHtml();
-            } else {
-                let detailText = detailsData[match.id] || '상세 정보가 아직 준비되지 않았습니다.';
-                const regex = new RegExp(text, 'gi');
-                detailText = detailText.replace(regex, matchStr => `<mark style="background:var(--accent-glow);color:white;padding:0 2px;border-radius:2px;">${matchStr}</mark>`);
-                body.innerHTML = detailText;
-            }
-            modal.style.display = 'block';
-        }
+        container.appendChild(dItem);
+    });
+}
+
+function getQuizHtml() {
+    let html = '';
+    quizzes.forEach(quiz => {
+        html += `
+            <div class="tf-item">
+                <div class="tf-q">
+                    <span class="tf-mark ${quiz.type}">${quiz.label}</span>
+                    ${quiz.question}
+                </div>
+                <div class="tf-a">
+                    <strong style="color: #ef4444; font-size: 0.95rem;">정답: ${quiz.answer}</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #52525b; line-height: 1.5;">${quiz.desc}</p>
+                </div>
+            </div>
+        `;
+    });
+    return html;
+}
+
+function openDetailReadingView(lecData, subData, filterText = '') {
+    document.getElementById('view-main').classList.remove('active');
+    document.getElementById('view-sub').classList.remove('active');
+    document.getElementById('view-detail').classList.add('active');
+    
+    // Light nav switch
+    document.querySelector('.glass-nav').classList.add('light-nav');
+    
+    document.getElementById('detailTitle').innerText = subData.subTitle;
+    document.getElementById('detailBackBtn').innerText = `← ${lecData.title}`;
+    
+    // Wire back button
+    const backBtn = document.getElementById('detailBackBtn');
+    // Remove previous listeners
+    const newBtn = backBtn.cloneNode(true);
+    backBtn.parentNode.replaceChild(newBtn, backBtn);
+    
+    newBtn.addEventListener('click', () => {
+        document.querySelector('.glass-nav').classList.remove('light-nav');
+        openSubListView(lecData, document.getElementById('searchInput').value);
+    });
+
+    const body = document.getElementById('readingBody');
+    
+    let injectedContent = subData.content;
+    if (injectedContent.includes('_QUIZ_PLACEHOLDER_')) {
+        injectedContent = getQuizHtml();
     }
+    
+    // Highlight if search exist
+    if (filterText) {
+        const regex = new RegExp(filterText, 'gi');
+        // Do not highlight inside html tags. Hard to do simple replace, but we'll try a safe approach
+        // for cheat sheet it's fine
+        // Simple highlighting wrapper
+        const highlightWrapper = (match) => `<mark style="background:#fef08a; padding: 0 2px;">${match}</mark>`;
+        // This regex highlights text outside of tags roughly.
+        injectedContent = injectedContent.replace(/(?![^<]*>)(text_to_replace)/gi.source.replace('text_to_replace', filterText), highlightWrapper);
+    }
+    
+    body.innerHTML = injectedContent;
+    window.scrollTo(0,0);
+}
+
+// Nav Buttons
+document.getElementById('subBackBtn').addEventListener('click', () => {
+    document.getElementById('view-sub').classList.remove('active');
+    document.getElementById('view-main').classList.add('active');
 });
 
-// Modal Close Event
-document.querySelector('.close-btn').addEventListener('click', () => {
-    document.getElementById('detailModal').style.display = 'none';
-});
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById('detailModal');
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
+// Search input wrapper
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    // Return to main view immediately upon searching
+    document.getElementById('view-sub').classList.remove('active');
+    document.getElementById('view-detail').classList.remove('active');
+    document.querySelector('.glass-nav').classList.remove('light-nav');
+    document.getElementById('view-main').classList.add('active');
+    
+    renderCards(e.target.value);
 });
 
 // Initial render

@@ -4,44 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>소프1 오픈북 치트시트</title>
-    <meta name="description" content="소프트웨어프로젝트1 오픈북 시험 대비용 치트시트 및 문제 풀이">
+    <meta name="description" content="소프트웨어프로젝트1 오픈북 시험 대비용 3단계 치트시트">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-glow"></div>
-    <div class="background-glow pos-2"></div>
+    <div class="background-glow" id="bg-glow-1"></div>
+    <div class="background-glow pos-2" id="bg-glow-2"></div>
     
     <header class="glass-nav">
         <div class="nav-content">
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="🔍 키워드를 검색하세요... (Enter 입력 시 바로 열림)" />
+                <input type="text" id="searchInput" placeholder="🔍 개념을 검색하세요... (관련된 소주제 목록으로 바로 이동)" />
             </div>
         </div>
     </header>
 
-    <main>
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">🖥️ 소프1 오픈북 치트시트</h2>
-            <p style="color: var(--text-secondary); font-size: 1.1rem;">키워드 탭 → 내용 바로 확인</p>
-        </div>
-        
-        <div class="grid-container" id="cardsContainer">
-            <!-- Cards will be populated by script.js -->
+    <main class="main-wrapper">
+        <!-- [VIEW 1] 메인 카드 그리드 -->
+        <div id="view-main" class="view-pane active">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">🖥️ 소프1 오픈북 치트시트</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">키워드 탭 → 바로 내용 확인</p>
+            </div>
+            <div class="grid-container" id="cardsContainer">
+                <!-- script.js에서 동적 생성 -->
+            </div>
         </div>
 
-        <!-- 모달 (상세 정보 팝업) -->
-        <div id="detailModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2 id="modalTitle">제목</h2>
-                <div id="modalBody" class="modal-body">내용이 들어갑니다.</div>
+        <!-- [VIEW 2] 서브 카테고리 리스트 -->
+        <div id="view-sub" class="view-pane">
+            <div class="top-nav-bar">
+                <button id="subBackBtn" class="nav-link">← 홈</button>
+                <h2 id="subTitle" class="nav-title">🎯 카테고리 명</h2>
+            </div>
+            <div class="sublist-container" id="subListContainer">
+                <!-- script.js에서 서브 리스트 동적 생성 -->
+            </div>
+        </div>
+
+        <!-- [VIEW 3] 리딩(디테일) 뷰 -->
+        <div id="view-detail" class="view-pane light-theme-pane">
+            <div class="reading-sheet">
+                <div class="reading-header">
+                    <button id="detailBackBtn" class="nav-link dark-version">← 이전 목록</button>
+                    <h2 id="detailTitle" class="reading-title">세부 제목</h2>
+                </div>
+                <div id="readingBody" class="reading-body">
+                    <!-- 상세 내용 노출 -->
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 소프트웨어프로젝트1 오픈북 대비 웹페이지. 응원합니다! 📝</p>
+        <p>&copy; 2026 소프트웨어프로젝트1 오픈북 치트시트. 시험 잘 보세요! 📝</p>
     </footer>
 
     <script src="detail_data.js"></script>
