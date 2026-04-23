@@ -486,4 +486,595 @@ Desktop Documents Downloads
             }
         ]
     }
+
+    ,{
+        id: "hw1", emoji: "📚", title: "숙제 1 완벽 대비 Q&A", color: "#f43f5e",
+        subs: [
+            {
+                subTitle: "A. 하드웨어와 데이터 표현 (Q1~Q10)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q1</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">컴퓨터에서 정보를 저장하고 처리 및 표현하는 최소 단위를 무엇이라 하며, 이들을 8개 모아 구성한 기본 단위를<br>무엇이라 하는가?</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">최소 단위는 비트(bit)이고, 기본 단위는 바이트(byte)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q2</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">다음 진법 변환을 수행하시오.<br>(a) 10진수 237d → 2진수, 16진수<br>(b) 2진수 11001011b → 10진수, 16진수<br>(c) 16진수 0xA7 → 10진수, 2진수</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">(a) 2진수: 11101101, 16진수: 0xED / (b) 10진수: 203, 16진수: 0xCB / (c) 10진수: 167, 2진수: 10100111이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q3</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">한 바이트(8 bits)를 이용하면 표현할 수 있는 부호 없는 정수의 범위는? 32비트 워드를 이용하면 지정 가능한 서<br>로 다른 주소의 개수는?</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">8비트 부호 없는 정수 범위는 0 ~ 255이다. 32비트 워드 주소 개수는 $2^{32}$개(약 42억 개)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q4</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">2의 보수 체계를 이용하여 아래 뺄셈을 8비트 2진수로 계산 과정을 보이시오.<br>119 - 53 = 66</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">119는 01110111, 53은 00110101이다. 53의 2의 보수(-53)는 11001011이다. 두 값을 더하면 01110111 + 11001011 = (1)01000010이며, 최상위 올림수 1은 버린다. 결과는 01000010 (10진수 66)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q5</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">M SB와 LSB가 무엇의 약자인지 쓰고, 8비트 이진수 10110100에서 M SB와 LSB 각각의 값을 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">MSB는 Most Significant Bit이며 값은 1이다. LSB는 Least Significant Bit이며 값은 0이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q6</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">ASCII 코드와 Unicode의 차이점을 설명하고, Unicode가 필요한 이유를 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">ASCII 코드는 영문자와 기호 위주의 7~8비트 체계인 반면, Unicode는 전 세계의 모든 문자를 표현하기 위해 16비트 이상의 공간을 사용하는 표준 체계이다. 다국어 환경에서 발생하는 문자 깨짐 현상을 방지하고, 전 세계 언어를 통합된 규격으로 처리하기 위해 필요하다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q7</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">계층적 메모리 구조를 빠른 접근 속도 순으로 나열하고, 각 계층의 특징을 간단히 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">레지스터 > 캐시 메모리 > 주기억장치(RAM) > 보조기억장치(HDD/SSD) 순이다. 상위 계층일수록 접근 속도가 빠르지만 용량이 작고 비싸다. 하위 계층으로 갈수록 속도는 느리지만 용량이 크고 저렴하며, 전원이 꺼져도 데이터가 유지(비휘발성)되는 특징을 가진다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q8</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">CPU 의 내부 구성 요소 3가지를 쓰고, 각각의 역할을 간단히 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">산술논리연산장치(ALU)는 사칙연산과 논리연산을 수행한다. 제어장치(Control Unit)는 메모리에서 명령어를 가져와 해석하고 제어 신호를 보낸다. 레지스터(Register)는 처리 중인 데이터나 메모리 주소를 임시로 저장한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q9</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">HDD와 SSD를 데이터 입출력 속도, 비트당 가격, 내구성 관점에서 비교하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">HDD가 SSD보다 비트당 가격이 저렴하지만, 데이터 입출력 속도는 SSD가 훨씬 빠르며 내구성은 물리적 부품이 없는 SSD가 뛰어나다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q10</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">컴퓨터 하드웨어를 기능별로 대분류하면 어떤 장치들로 구분되는가? 각 장치에 해당하는 예시를 1개씩 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">입력장치(키보드), 처리장치(CPU), 주기억장치(RAM), 보조기억장치(HDD/SSD), 출력장치(모니터)로 구분된다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "B. 컴퓨터 소프트웨어와 운영체제 (Q11~Q18)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q11</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">시스템 소프트웨어와 응용 소프트웨어의 차이를 설명하고, 각각 2가지씩 예시를 드시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">시스템 소프트웨어(예: 운영체제, 컴파일러)는 하드웨어를 제어하고 실행 환경을 제공하며, 응용 소프트웨어(예: 웹 브라우저, 워드 프로세서)는 사용자의 특정 목적을 달성하기 위해 사용된다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q12</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">운영체제의 4가지 주요 역할(자원 관리)을 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">프로세스 관리, 메모리 관리, 파일 관리, 입출력 장치 관리이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q13</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">프로그램(program)과 프로세스(process)의 차이를 CPU 및 메모리의 관점에서 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">프로그램은 보조기억장치에 저장된 정적인 명령어의 집합이며, 프로세스는 프로그램이 메모리에 적재되어 CPU를 할당받아 실행 중인 동적인 상태를 의미한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q14</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">커널(kernel)이란 무엇인지 설명하고, 시스템 콜(system call)의 역할을 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">커널은 하드웨어 제어, 메모리 및 프로세스 관리 등 운영체제의 핵심 기능을 수행하며 메모리에 상주하는 부분이다. 시스템 콜은 응용 프로그램이 커널의 권한이 필요한 서비스를 요청하기 위한 인터페이스이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q15</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">컴파일러와 인터프리터의 차이점을 설명하고, 각 방식의 장점을 1가지씩 서술하시오. 또한 각 방식을 대표하는 프<br>로그래밍 언어를 2개씩 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">컴파일러(예: C, C++)는 전체 코드를 기계어로 번역하여 실행 파일을 만들며 실행 속도가 빠르다. 인터프리터(예: Python, JavaScript)는 코드를 한 줄씩 해석하여 즉시 실행하므로 디버깅이 쉽다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q16</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 두 코드는 동일한 에러(변수  n 이  정의되지  않음)를 발생시킨다. 실행 결과가 다른 이유를 컴파일러/인터프<br>리터 관점에서 설명하시오.<br># Python<br>print("hello")<br>print(n)<br>실행  결과 : hello 출력  후  NameError 발생<br>// C<br>#include &lt;stdio.h&gt;<br>int main() {<br>printf("hello\n");<br>printf(n);<br>}<br>실행  결과 : 컴파일  에러  발생 , 실행  파일  생성  안  됨</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">파이썬(인터프리터)은 한 줄씩 실행하므로 첫 줄은 정상 출력되나 두 번째 줄에서 에러가 발생한다. C(컴파일러)는 전체를 미리 번역하므로 정의되지 않은 변수를 사전에 발견하여 컴파일 에러를 발생시킨다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q17</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">디버거(debugger)란 무엇인지 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">소스 코드를 한 줄씩 실행하거나 중단점을 설정하여 내부 변숫값을 확인하고 버그를 찾아 수정할 수 있도록 돕는 도구이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q18</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">장치 관리자(device driver)란 무엇이며, 운영체제와 어떤 관계에 있는지 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">운영체제가 특정 하드웨어 장치를 제어하고 정상적으로 통신할 수 있도록 구체적인 동작 방식을 운영체제에 알려주는 소프트웨어이다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "C. 컴퓨터 네트워크와 인터넷 (Q19~Q26)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q19</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아날로그 통신 대비 디지털 통신의 장점 3가지를 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">잡음이나 신호 왜곡에 강해 신뢰성이 높고, 데이터의 압축 및 암호화가 쉬우며, 다른 디지털 장비와의 호환성이 뛰어나다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q20</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">직렬 전송과 병렬 전송을 비교 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">직렬 전송은 하나의 통신선으로 데이터를 1비트씩 전송(장거리 유리)하며, 병렬 전송은 여러 통신선으로 여러 비트를 동시에 전송(단거리 유리, 속도 빠름)한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q21</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">단방향(simplex), 반이중(half duplex), 전이중(full duplex) 전송의 차이를 설명하고, 각각의 예시를 1개씩 드시<br>오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">단방향은 한쪽으로만 전송(예: TV)하고, 반이중은 양방향은 가능하나 동시에는 불가하며(예: 무전기), 전이중은 동시에 양방향 전송이 가능하다(예: 전화기).</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q22</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">OSI 7계층 모델의 각 계층 이름을 순서대로(1~7계층) 쓰고, 네트워크 계층과 전송 계층의 역할을 각각 한 줄로 설<br>명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">물리 - 데이터링크 - 네트워크 - 전송 - 세션 - 표현 - 응용 계층 순이다. 네트워크 계층은 최적의 경로를 설정(라우팅)하고, 전송 계층은 양 종단 간의 신뢰성 있는 데이터 전송을 보장한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q23</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">IP 주소의 클래스(A~E)를 설명하고, 216.58.197.100은 어느 클래스에 속하는지 답하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">첫 번째 옥텟이 216이므로 소규모 네트워크에 할당되는 C 클래스에 속한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q24</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">IPv4와 IPv6의 차이를 비트 수 관점에서 설명하고, IP 주소 부족 문제의 해결 방안 2가지를 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">IPv4는 32비트, IPv6는 128비트 주소 체계이다. 주소 부족 문제는 IPv6 전환과 NAT(네트워크 주소 변환) 기술 활용으로 해결할 수 있다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q25</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">Private IP와 Public IP의 차이를 설명하고, NAT(Network Address Translation)의 역할을 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">Private IP는 내부 네트워크에서만 사용되며 인터넷에 직접 연결할 수 없고, Public IP는 인터넷에서 유일하게 식별되어 직접 통신 가능한 주소이다. NAT는 내부망의 사설 IP를 외부망과 통신 가능한 공인 IP로 변환해 준다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q26</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">프로토콜(protocol)이란 무엇이며, 왜 계층 구조로 설계하는지 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">프로토콜은 컴퓨터 간 통신을 위해 정해 놓은 규약이다. 통신 과정을 역할별로 나누어 각 계층이 독립적으로 작동하게 함으로써 시스템의 유지보수, 표준화, 확장을 쉽게 하기 위해 계층 구조로 설계한다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "D. 계산적 사고와 알고리즘 (Q27~Q32)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q27</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">알고리즘이 만족해야 할 5가지 조건의 이름과 의미를 각각 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">입력(외부 자료 0개 이상), 출력(결과 1개 이상), 명확성(명령이 모호하지 않음), 유한성(반드시 종료됨), 유효성(실행 가능해야 함)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q28</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 정렬된 배열에서 이진 탐색(binary search)으로 원소 51을 찾을 때, 각 탐색 단계에서 비교하는 원소와 탐색<br>범위를 보이시오.<br>[2, 9, 11, 15, 28, 33, 40, 47, 51, 64, 76, 77, 82, 85, 94]</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">1단계: 인덱스 0~14(중간값 47, 작으므로 오른쪽 좁힘), 2단계: 인덱스 8~14(중간값 77, 크므로 왼쪽 좁힘), 3단계: 인덱스 8~10(중간값 64, 크므로 왼쪽 좁힘), 4단계: 인덱스 8(중간값 51, 일치하여 성공)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q29</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">선택 정렬(selection sort)의 동작 원리를 설명하고, n개의 원소를 정렬할 때의 시간 복잡도를 빅오(Big-O) 표기<br>법으로 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">정렬되지 않은 원소 중 최솟값을 찾아 첫 번째 원소와 교환하는 과정을 반복한다. 시간 복잡도는 $O(n^2)$이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q30</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">이진 탐색(binary search)의 시간 복잡도와 공간 복잡도를 각각 쓰시오. 이진 탐색이 가능하려면 데이터가 어떤<br>조건을 만족해야 하는가?</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">시간 복잡도는 O(logn), 공간 복잡도는 $O(1)$이다. 데이터가 미리 오름차순이나 내림차순으로 정렬되어 있어야 한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q31</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">길이가 100이고 오름차순으로 정렬된 배열에서 이진 탐색을 수행할 때, 최악의 경우 최대 몇 번의 비교가 필요한<br>가? 풀이 과정을 함께 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">매번 탐색 범위가 절반으로 줄어들므로 $\log_2(100)$을 올림한 값인 최대 7번의 비교가 필요하다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q32</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">외판원 문제(TSP; Traveling Salesperson Problem)란 무엇인지 설명하고, 이 문제가 왜 "매우 어렵다"고 하는지<br>그 이유를 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">세일즈맨이 모든 도시를 방문하고 출발지로 돌아오는 최단 경로를 찾는 문제이다. 도시가 늘어날수록 경우의 수가 팩토리얼(n!) 형태로 폭발적으로 증가하여 다항 시간 내에 최적해를 구하기가 매우 어렵다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "E. 프로그래밍 언어와 프로그램 (Q33~Q38)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q33</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">프로그래밍 패러다임 3가지(절차형, 함수형, 객체지향)를 각각 한 줄로 설명하고, 대표 언어를 1개씩 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">절차형은 명령어의 순차적 실행 중심(C언어), 객체지향은 데이터와 메서드를 객체로 묶어 상호작용하게 함(Java, Python), 함수형은 수학적 함수 계산 중심(LISP)으로 동작한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q34</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">변수(variable)와 상수(constant)의 차이를 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">변수는 실행 중 값을 변경할 수 있는 메모리 공간이고, 상수는 한 번 할당되면 값이 변경되지 않는 메모리 공간이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q35</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 Python 코드의 실행 결과를 쓰시오.<br>balance = 1000<br>year = 0<br>while balance < 2000:<br>year += 1<br>interest = balance * 0.05<br>balance += interest<br>print(" 기간 : %d 년 " % year)<br>print(" 총액 : %d 원 " % balance)</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">기간: 15 년 / 총액: 2078 원이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q36</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">조건문과 반복문을 사용하여 1부터 100까지 자연수 중 홀수의 합과 짝수의 합을 각각 구하는 pseudocode를 작<br>성하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">sum_odd = 0<br>sum_even = 0<br>for i from 1 to 100:<br>&nbsp;&nbsp;&nbsp;&nbsp;if i % 2 == 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_odd = sum_odd + i<br>&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_even = sum_even + i<br>print "홀수의 합: ", sum_odd<br>print "짝수의 합: ", sum_even</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q37</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">함수(function)란 무엇인지 설명하고, 함수를 사용하는 장점을 2가지 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">특정 작업을 수행하도록 독립적으로 설계된 코드 블록이다. 코드를 재사용할 수 있고, 프로그램의 가독성과 유지보수성이 향상된다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q38</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 Python 코드의 실행 결과를 쓰시오.<br>string = "Kookmin University"<br>vowels = "aeiouAEIOU"<br>cnt_v = 0<br>cnt_c = 0<br>for ch in string:<br>if ch in vowels:<br>cnt_v += 1<br>elif ch.isalpha():<br>cnt_c += 1<br>print(cnt_v, cnt_c)</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">7 10 이다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "F. 가상화와 클라우드 컴퓨팅 (Q39~Q44)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q39</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">추상화(abstraction)란 무엇인지 설명하고, 운영체제가 제공하는 추상화의 예를 2가지 드시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">복잡한 내부 구현을 숨기고 핵심적인 개념만 단순화하여 제공하는 것이다. 운영체제는 하드디스크를 '파일(File)'로, 메모리를 '주소 공간(Address Space)'으로 추상화한다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q40</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">하이퍼바이저 Type-1과 Type-2의 차이를 그림 또는 글로 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">Type-1(네이티브)은 컴퓨터 하드웨어 바로 위에서 실행되어 성능이 우수하고, Type-2(호스트형)는 기존 운영체제 위에서 응용 프로그램처럼 실행된다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q41</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">전가상화(Full Virtualization)와 반가상화(Para Virtualization)의 차이를 설명하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">전가상화는 게스트 운영체제 수정 없이 가상화하며 오버헤드가 발생한다. 반가상화는 게스트 운영체제 커널을 일부 수정해 하이퍼바이저와 직접 통신하게 하여 성능을 향상시킨다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q42</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">컨테이너(container) 기반 가상화의 특징을 하이퍼바이저 기반 가상화와 비교하여 설명하시오. Docker의 역할<br>도 함께 서술하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">컨테이너는 호스트 운영체제의 커널을 공유하므로 하이퍼바이저 방식보다 훨씬 가볍고 빠르다. Docker는 이 컨테이너를 쉽게 생성, 배포, 관리해 주는 플랫폼이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q43</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">클라우드 컴퓨팅의 3가지 서비스 모델(IaaS, PaaS, SaaS)을 각각 설명하고, 사용자의 관리 범위가 가장 넓은 모<br>델과 가장 좁은 모델을 지적하시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">IaaS는 기본 인프라(서버 등)를, PaaS는 개발 및 실행 플랫폼을, SaaS는 완성된 응용 소프트웨어를 제공한다. 관리 범위가 가장 넓은 모델은 IaaS이고, 가장 좁은 모델은 SaaS이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q44</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">프로세스 가상 기계(Process Virtual M achine)란 무엇인지 설명하고, 대표적인 예를 드시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">특정 하드웨어나 플랫폼에 종속되지 않고 프로그램이 독립적으로 실행될 수 있도록 돕는 소프트웨어 환경이다. 대표적인 예로 JVM(Java Virtual Machine)이 있다.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                subTitle: "G. 리눅스와 셸 명령어 (Q45~Q50)",
+                content: `
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q45</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 각 셸 명령어의 기능을 한 줄로 설명하시오.<br>명령어 기능<br>(a) ls -al<br>(b) cd ..<br>(c) mkdir test<br>(d) rm -rf dir1<br>(e) cp -r src dst<br>(f) mv a.txt b.txt<br>(g) cat file.txt<br>(h) find . -name "*.txt"<br>(i) ps aux<br>(j) kill -9 1234<br>(k) tar -zcvf backup.tar.gz dir/<br>(l) df -h<br>(m ) du -sh dir/</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">(a) ls -al: 숨김 파일 포함 전체 상세 목록 출력 / (b) cd: 디렉토리 이동 / (c) mkdir test: 디렉토리 생성 / (d) rm -rf dir1: 디렉토리 강제 삭제 / (e) cp -r src dst: 디렉토리 복사 / (f) mv a.txt b.txt: 파일 이름 변경 및 이동 / (g) cat file.txt: 파일 내용 출력 / (h) find -name "*.txt": 파일 검색 / (i) ps aux: 전체 프로세스 상태 출력 / (j) kill -9 1234: 특정 프로세스 강제 종료 / (k) tar -zcvf: 파일 압축 / (l) df -h: 디스크 용량 확인 / (m) du -sh dir/: 디렉토리 사용 용량 확인이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q46</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">리눅스 파일 접근 권한 -rwxr-x---를 chmod 숫자 표기법으로 변환하시오. 또한, 이 파일에 대해 others에<br>게 읽기/실행 권한을 추가하는 chmod 명령어를 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">숫자 표기법으로 변환하면 740이다. others에 읽기/실행 권한을 추가하는 명령어는 chmod o+rx 파일명 (또는 chmod 745 파일명)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q47</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">아래 각 상황에 맞는 셸 명령어를 작성하시오.<br>(a) 현재 디렉토리에서 test로 시작하는 모든 파일 삭제<br>(b) data.txt 파일의 내용을 result.txt에 복사하면서 동시에 화면에도 출력<br>(c) 현재 실행 중인 프로세스 중 python 관련 프로세스만 출력<br>(d) /home/user/docs 디렉토리 전체를 docs_backup.tar.gz로 압축<br>(e) experiment.txt 파일을 gzip으로 압축한 후 다시 해제</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">(a) rm test* (b) cat data.txt | tee result.txt (c) ps aux | grep python (d) tar -zcvf docs_backup.tar.gz /home/user/docs (e) gzip experiment.txt (해제 시 gunzip experiment.txt.gz)이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q48</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">리눅스 디렉토리 구조에서 아래 각 디렉토리의 역할을 한 줄로 설명하시오.<br>/bin, /dev, /etc, /home, /tmp, /usr, /var</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">/bin은 기본 실행 파일, /dev는 장치 파일, /etc는 시스템 환경 설정 파일, /home은 일반 사용자 홈 디렉토리, /tmp는 임시 파일, /usr은 응용 프로그램 및 라이브러리, /var는 가변적인 데이터(로그 등)가 저장되는 곳이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q49</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">심볼릭 링크(symbolic link)와 하드 링크(hard link)의 차이를 inode 관점에서 설명하시오. 심볼릭 링크를 생성<br>하는 명령어도 쓰시오.</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">하드 링크는 원본 파일과 동일한 inode를 가리켜 데이터를 직접 공유하고, 심볼릭 링크는 독립적인 inode를 가지며 원본의 경로 정보만 저장한다. 생성 명령어는 ln -s [원본파일] [링크이름]이다.</p>
+                        </div>
+                    </div>
+
+                    <div class="tf-item">
+                        <div class="tf-q" style="flex: 1.2;">
+                            <span class="tf-mark short" style="color:#f43f5e;">Q50</span><br>
+                            <span style="font-weight:600; line-height: 1.6;">표준 입력(stdin), 표준 출력(stdout), 표준 에러(stderr)가 무엇인지 설명하시오. 또한 리디렉션(&lt;, &gt;)과 파이<br>프라인(|)의 차이를 설명하고, 아래 명령어의 의미를 해석하시오.<br>sort &lt; input.txt | head -5 &gt; top5.txt</span>
+                        </div>
+                        <div class="tf-a" style="flex: 1.8; background: #fff1f2; border: 1px solid #fecdd3; padding: 1.2rem;">
+                            <strong style="color: #e11d48; display:block; margin-bottom: 8px;">정답 확인:</strong>
+                            <p style="margin:0; color:#27272a; line-height: 1.6;">표준 입력(stdin)은 데이터가 들어오는 통로, 표준 출력(stdout)은 실행 결과가 나가는 통로, 표준 에러(stderr)는 오류 메시지가 나가는 통로이다. 리다이렉션(&lt;, &gt;)은 입출력 방향을 파일로 돌리고, 파이프라인(|)은 앞 명령의 출력을 뒤 명령의 입력으로 연결한다. 주어진 명령어는 input.txt를 읽어 정렬한 뒤 그중 위에서 5줄만 추출하여 top5.txt 파일에 저장하라는 의미이다</p>
+                        </div>
+                    </div>
+                `
+            }
+        ]
+    }
 ];
