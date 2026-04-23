@@ -1,0 +1,221 @@
+소프트웨어프로젝트I
+가상화와클라우드컴퓨팅
+2026학년도1학기
+국민대학교소프트웨어학부
+시뮬레이션(Simulation)
+•Simulation: 시스템동작의몇가지특성을이용하여그결과를산출하는것
+•Emulation:대상시스템의동작을그대로모사하여흉내내는것
+가상실험
+•가상실험이가능해지는이유
+•컴퓨터하드웨어의성능발전(비용절감)
+•대상시스템에대한이해도증가
+•가상실험으로써얻는이득
+•실패에대한위험감소(또는제거)
+•실험대상인시스템의반응에대한세밀한관측
+추상화(Abstraction)
+•예:운영체제가제공하는추상화
+•하드디스크에대해서“파일”로추상화
+•메모리에대해서“주소”로추상화
+•네트워크에대해서“포트”로추상화
+•컴퓨터과학은곳곳에서추상화의계층을다루고있음
+복잡한자료,모듈,시스템등으로부터
+핵심적인개념또는기능을간추려내는것
+
+가상화(Virtualization)
+이미지출처:Wikipedia
+•(조금딱딱하게)물리적인컴퓨터
+리소스의특징을다른시스템,응용
+프로그램,최종사용자들이리소스와상호
+작용하는방식으로부터감추는기술
+•(대강부드럽게)컴퓨터안에또다른,즉
+가상의컴퓨터가존재하도록하는기술
+컴퓨터리소스의추상화를일컫는광범위한용어
+가상화컴퓨팅의이점
+•시스템측면
+•시스템이용률(utilization) 의향상
+•설정(configuration) 구성과복원이용이
+•비즈니스측면
+•자본및운영비용절감
+•다운타임최소화(또는제거)
+•비즈니스연속성및재해복구향상
+•데이터센터관리간소화
+서버가상화기술의진화
+•VM (Virtual Machine) 기반
+•하이퍼바이저(hypervisor) 를이용
+•Type 1: 네이티브(native) 또는bare-metal 형
+•전가상화(full virtualization)
+•반가상화(para virtualization)
+•Type 2: 호스트형(hosted)
+•컨테이너(Container)기반
+•호스트OS의컨테이너기술을이용
+ω
+Hypervisor Type 1
+호스트(가상화를제공하는컴퓨터)의
+하드웨어위에서직접하이퍼바이저가실행
+하이퍼바이저가제공하는
+가상기계(virtual machine) 위에
+여러(이종의)게스트(guest) OS 가실행가능
+그림출처:Wikipedia
+→네이티브(native) 또는베어메탈(bare metal) 타입이라고불림
+전가상화와반가상화
+•전가상화(Full Virtualization)
+•게스트OS 는호스트시스템과완전히분리
+•게스트OS 는하이퍼바이저의특정한기능을통하여호스트시스템의하드웨어자원에접근
+•에뮬레이션에준하는중재의부담
+•반가상화(Para Virtualization)
+•게스트OS 를일부수정하여직접하드웨어자원을접근할수있도록함(hypercall)
+•성능상의이득이있으나게스트OS 커널의수정이요구되는번거로움도있음
+~
+੉੷ాೞ૑X
+~
+Hypervisor Type 2
+그림출처:Wikipedia
+호스트(가상화를제공하는컴퓨터)의
+하드웨어위에는host OS 가실행
+Host OS 위에서하이퍼바이저가실행하여
+가상기계(virtual machine) 추상화제공
+Type 1 의경우와마찬가지로
+게스트(guest) OS 는가상기계에서실행
+(거의)모든하드웨어자원을에뮬레이션으로제공
+→오버헤드가크다는단점있으나유연성이높음
+하이퍼바이저의두가지형태
+한세트의서버하드웨어를이용하여
+여러개의VM 이실행될수있도록하여
+자원이용의효율성을높임
+유연성이높아
+데스크톱(랩톱)또는
+작은규모의서버환경에서널리이용
+butࢿT
+butࢿ↓
+Type 2 하이퍼바이저의예
+https://www.virtualbox.org/
+Oracle Virtualbox on Linux (Ubuntu)
+Guest OS: Windows
+프로세스가상기계(Process VM)
+Process Virtual Machine:
+응용프로그램은가상기계명령어로번역되고
+가상기계인런타임시스템이이것을해석,실행
+(예:Java Virtual Machine)
+Virtual Machine Monitor (Hypervisor):
+VMM 이컴퓨터하드웨어를가상화하여
+이위에운영체제와응용소프트웨어가실행
+컨테이너(Containers)
+•가상기계(virtual machine) 의대체또는보완
+방식으로서각광받고있음
+•소프트웨어개발및배포의효율과안정성을향상시킴
+•응용프로그램,설정(configuration) 파일,라이브러리,
+그리고이들사이의의존성관계를한데묶어관리
+→이“묶음”을컨테이너라고부르고,
+→컨테이너엔진의도움으로시스템의존성이최소화되어
+소프트웨어시스템의이식이용이해짐
+A
+Containerization
+그림출처:https://medium.com/@darkrasid/docker%EC%99%80-vm-d95d60e56fdd
+컨테이너가에뮬레이트하는대상은
+하드웨어가아니고운영체제
+하이퍼바이저를이용한가상화에비하여
+가볍고빠르다는장점을가짐
+컨테이너엔진이
+가상의런타임환경을제공
+각각의응용소프트웨어는
+격리된환경에서실행
+컨테이너사용의이점
+Gmail 에서YouTube, Google 검색에이르기까지
+Google 의모든제품은컨테이너에서실행됩니다.
+개발팀은컨테이너화를통해더욱신속하게움직이고,
+효율적으로소프트웨어를배포하며
+전례없는수준의확장성을확보할수있습니다.
+텍스트와이미지출처:
+https://cloud.google.com/containers?hl=ko
+
+도커(Docker)
+ https://www.docker.com/
+널리이용되고있는컨테이너기반가상화플랫폼
+-Linux, Windows, MacOS 상에서실행되는컨테이너엔진을제공
+-Azure, AWS 등의클라우드컴퓨팅환경에서의실행도지원
+도커를이용한소프트웨어개발
+
+Docker Hub
+https://hub.docker.com/
+컨테이너이미지들에대해
+원격저장,유지관리,
+공유,권한관리등을
+효율적으로행할수있는
+온라인서비스제공
+(이후에배우게될
+GitHub 와유사해요!)
+소프트웨어의
+개발및배포프로세스의
+효율성이크게증대
+This Photoby Unknow n Author is licensed under CC BY-SA
+클라우드컴퓨팅(Cloud Computing)
+IT 자원을인터넷을통해온디맨드(on-demand) 로제공하고
+사용한만큼만비용을지불할수있도록하는기술
+구입,소유,유지관리로부터
+필요에따라“접근”하는
+인프라스트럭쳐로중심이동
+클라우드컴퓨팅의이점
+•민첩성(Agility)
+•IT 리소스의구동이빨라짐(일단위→분단위)
+•탄력성(Elasticity)
+•비즈니스요구에따라축소/확장이가능
+•비용절감(Low Cost)
+•TCO (total cost of ownership) vs 사용요금
+•가용성(Availability)
+•빠른배포와무중단교체
+IaaS (Infrastructure as a Service)
+그림출처:AWS (Amazon Web Service)
+https://aws.amazon.com/ko/what-is-cloud-computing/
+•IT 자원을서비스로서제공
+•네트워킹기능,컴퓨터(가상또는전용),데이터스토리지
+•유연성과관리제어자유도가높으며,기존의IT 부서및개발자
+집단에익숙한기능을제공
+PaaS (Platform as a Service)
+그림출처:AWS (Amazon Web Service)
+https://aws.amazon.com/ko/what-is-cloud-computing/
+•소프트웨어가실행될플랫폼을서비스로서제공
+•하드웨어와운영체제등은서비스제공자가모두관리
+•응용소프트웨어의배포와유지관리에집중할수있음
+•IT 자원의구매,용량계획,유지관리등의부담을경감
+ż
+SaaS (Software as a Service)
+그림출처:AWS (Amazon Web Service)
+https://aws.amazon.com/ko/what-is-cloud-computing/
+•서비스공급자에의해실행되고관리되는완전한제품을제공
+•최종사용자응용서비스(예:웹기반이메일등)
+•서비스유지관리방법및시스템인프라의운용에대하여고려할
+필요없이소프트웨어를이용할수있음
+ż
+Google Cloud Platform
+https://cloud.google.com/
+•GAE (Google App Engine) 을이용하여빠른
+개발및배포가가능
+•Google 이자사의서비스(검색,Gmail, 
+Youtube등)을구성하는데이용
+•데이터분석및기계학습플랫폼을강조
+AWS (Amazon Web Services)
+https://aws.amazon.com/
+•IaaS 영역이강조된형태의서비스를운용하여
+클라우드컴퓨팅서비스시장을선점
+•데이터베이스와보안,자동화기술등을강조
+•큰기업고객을많이확보하고있으며기업,학교
+및일반대중을상대로교육,홍보에집중
+
+Microsoft Azure
+https://azure.microsoft.com/ko-kr/
+•PaaS 를기초로서비스를시작하여이후IaaS 
+서비스로확장
+•윈도우즈플랫폼을이용하는소프트웨어개발에
+유리한측면
+•Red Hat Linux 에통합지원을제공함으로써
+자사의플랫폼종속성을탈피하려는노력
+요약
+•추상화,가상화
+•컴퓨터는추상화의집합체(전기적신호→정보)
+•가상화기술을통하여시스템이용률을향상시키고비용을
+절감할수있음
+•클라우드컴퓨팅의확산
+•소유에서접근으로
+•가상화기술을바탕으로하고있음
+•IaaS, PaaS, SaaS
+Rifkin, Jeremy. “The Age of Access”
